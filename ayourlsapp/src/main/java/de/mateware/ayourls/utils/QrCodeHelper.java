@@ -1,16 +1,16 @@
 package de.mateware.ayourls.utils;
 
 import android.content.Context;
-import android.databinding.BindingAdapter;
+import androidx.databinding.BindingAdapter;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.util.LruCache;
-import android.support.v4.util.Pair;
+import androidx.core.content.ContextCompat;
+import androidx.collection.LruCache;
+import androidx.core.util.Pair;
 import android.text.TextUtils;
 import android.widget.ImageView;
 

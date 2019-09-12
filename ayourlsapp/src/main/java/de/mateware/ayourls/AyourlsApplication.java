@@ -4,13 +4,7 @@ import android.app.Application;
 import android.os.Build;
 import android.os.StrictMode;
 
-
-import com.crashlytics.android.Crashlytics;
-import com.crashlytics.android.core.CrashlyticsCore;
-
 import de.mateware.ayourls.service.ClipboardService;
-import io.fabric.sdk.android.Fabric;
-
 
 /**
  * Created by mate on 30.09.2015.
@@ -31,14 +25,6 @@ public class AyourlsApplication extends Application {
                                                                                 .build());
             }
         }
-
-        // Set up Crashlytics, disabled for debug builds
-        Crashlytics crashlyticsKit = new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG)
-                                                                                                 .build())
-                                                              .build();
-
-        // Initialize Fabric with the debug-disabled crashlytics.
-        Fabric.with(this, crashlyticsKit);
 
         ClipboardService.checkClipboardServiceActivation(this);
     }

@@ -1,7 +1,7 @@
 package de.mateware.ayourls.settings;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import de.mateware.ayourls.R;
 

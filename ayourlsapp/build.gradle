@@ -1,16 +1,4 @@
-buildscript {
-    repositories {
-        maven { url 'https://maven.fabric.io/public' }
-    }
-
-    dependencies {
-        classpath 'io.fabric.tools:gradle:1.+'
-    }
-}
-
 apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
-//apply plugin: 'com.android.databinding'
 
 def matewarePropFile = file("mateware.properties")
 if (matewarePropFile.exists()) {
@@ -21,28 +9,30 @@ if (matewarePropFile.exists()) {
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
 
     dataBinding {
         enabled = true
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     defaultConfig {
-        applicationId "de.mateware.ayourls"
-        minSdkVersion 8
-        targetSdkVersion 23
-        versionCode 8
+        applicationId 'de.mateware.ayourls'
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 10
         versionName "1.0." + versionCode
     }
     buildTypes {
         debug {
-            ext.crashlytics = false
             versionNameSuffix "-DEBUG"
         }
         release {
             zipAlignEnabled true
-            minifyEnabled true
+            minifyEnabled false
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -56,29 +46,21 @@ android {
     }
 }
 
-repositories {
-    maven { url 'https://maven.fabric.io/public' }
-}
-
 dependencies {
-    final SUPPORT_LIBRARY_VERSION = "23.2.1"
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:' + SUPPORT_LIBRARY_VERSION;
-    compile 'com.android.support:support-v4:' + SUPPORT_LIBRARY_VERSION;
-    compile 'com.android.support:preference-v7:' + SUPPORT_LIBRARY_VERSION;
-    compile 'com.android.support:recyclerview-v7:' + SUPPORT_LIBRARY_VERSION;
-    compile 'com.android.support:design:' + SUPPORT_LIBRARY_VERSION;
-    compile 'com.android.support:cardview-v7:' + SUPPORT_LIBRARY_VERSION;
-    compile 'com.github.tony19:logback-android-core:1.1.1-4'
-    compile 'com.github.tony19:logback-android-classic:1.1.1-4'
-    compile 'org.slf4j:slf4j-api:1.7.12'
-    compile 'com.mcxiaoke.volley:library:1.0.19'
-    compile 'org.apache.commons:commons-collections4:4.0'
-    compile 'com.google.zxing:core:3.2.1'
-    compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
-        transitive = true;
-    }
-    compile 'com.gitlab.matecode:androiddialog:1.0.3'
+    compileOnly fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0';
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0';
+    implementation 'androidx.preference:preference:1.1.0';
+    implementation 'androidx.recyclerview:recyclerview:1.0.0';
+    implementation 'com.google.android.material:material:1.0.0';
+    implementation 'androidx.cardview:cardview:1.0.0';
+    implementation 'com.github.tony19:logback-android-core:1.1.1-4'
+    implementation 'com.github.tony19:logback-android-classic:1.1.1-4'
+    implementation 'org.slf4j:slf4j-api:1.7.28'
+    implementation 'com.mcxiaoke.volley:library:1.0.19'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+    implementation 'com.google.zxing:core:3.4.0'
+    implementation 'com.gitlab.matecode:androiddialog:1.0.3'
 }
 
 

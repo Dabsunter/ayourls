@@ -1,9 +1,10 @@
 package de.mateware.ayourls.viewmodel;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
-import android.support.annotation.ColorRes;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.ColorRes;
+import androidx.core.content.ContextCompat;
 import android.view.View;
 
 import de.mateware.ayourls.R;
@@ -36,6 +37,7 @@ public class LinkImportViewModel extends LinkViewModel {
         }
     }
 
+    @SuppressLint("ResourceType")
     public
     @ColorRes
     int getTitleTextColor() {

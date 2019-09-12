@@ -4,11 +4,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v7.preference.CheckBoxPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceFragmentCompat;
-import android.support.v7.preference.PreferenceManager;
+import androidx.fragment.app.DialogFragment;
+import androidx.preference.CheckBoxPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
 import android.text.TextUtils;
 
 import org.slf4j.Logger;
@@ -143,7 +143,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Settin
         //Workaround for not working xml prefences
         log.info(preference.toString());
 
-        final String DIALOG_FRAGMENT_TAG = "android.support.v7.preference.PreferenceFragment.DIALOG";
+        final String DIALOG_FRAGMENT_TAG = "androidx.preference.PreferenceFragment.DIALOG";
         if (preference.getKey()
                       .equals(getString(R.string.pref_key_server_url)) || preference.getKey()
                                                                                     .equals(getString(R.string.pref_key_server_token))) {

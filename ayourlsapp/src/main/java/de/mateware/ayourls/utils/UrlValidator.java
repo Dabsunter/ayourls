@@ -1,6 +1,6 @@
 package de.mateware.ayourls.utils;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 
 import org.slf4j.Logger;

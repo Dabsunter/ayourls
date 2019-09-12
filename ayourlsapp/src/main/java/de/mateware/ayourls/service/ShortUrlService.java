@@ -7,10 +7,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.preference.PreferenceManager;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
 import android.text.TextUtils;
 
 import com.android.volley.VolleyError;
@@ -126,7 +126,7 @@ public class ShortUrlService extends IntentService {
                                                                                                                      .addAction(R.drawable.ic_browser_24dp, getString(R.string.action_browser), browserPendingIntent);
 
                                             try {
-                                                int largeIconSize = getResources().getDimensionPixelSize(android.support.v7.appcompat.R.dimen.notification_large_icon_height);
+                                                int largeIconSize = getResources().getDimensionPixelSize(androidx.appcompat.R.dimen.notification_large_icon_height);
                                                 Bitmap largeIcon = QrCodeHelper.getInstance(this).generateQrBitmap(link.getShorturl(),largeIconSize,0);
 //                                                Bitmap largeIcon = QrCodeHelper.getInstance(this)
 //                                                                               .getQrBitmapFromFile(link.getShorturl(), largeIconSize);

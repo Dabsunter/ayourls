@@ -31,11 +31,6 @@
 -keep interface com.squareup.okhttp.** { *; }
 -dontwarn com.squareup.okhttp.**
 
-# Fabric.io
--keepattributes SourceFile,LineNumberTable
--keep class com.crashlytics.** { *; }
--keep class com.crashlytics.android.**
-
 ## GreenRobot EventBus specific rules ##
 # https://github.com/greenrobot/EventBus/blob/master/HOWTO.md#proguard-configuration
 -keepclassmembers class ** {
@@ -49,25 +44,24 @@
 -dontwarn ch.qos.logback.core.net.*
 
 #Support design
--dontwarn android.support.design.**
--keep class android.support.design.** { *; }
--keep interface android.support.design.** { *; }
--keep public class android.support.design.R$* { *; }
+-dontwarn com.google.android.material.**
+-keep class com.google.android.material.** { *; }
+-keep interface com.google.android.material.** { *; }
+-keep public class com.google.android.material.R$* { *; }
 
 #Support appcompat
--keep public class android.support.v7.widget.** { *; }
--keep public class android.support.v7.internal.widget.** { *; }
--keep public class android.support.v7.internal.view.menu.** { *; }
+-keep public class androidx.appcompat.widget.** { *; }
+-keep public class androidx.preference.internal.widget.** { *; }
+-keep public class androidx.preference.internal.view.menu.** { *; }
 
--keep public class * extends android.support.v4.view.ActionProvider {
+-keep public class * extends androidx.core.view.ActionProvider {
     public <init>(android.content.Context);
 }
 
 #Suppor Preference
--keep public class * extends android.support.v7.preference.Preference { *; }
+-keep public class * extends androidx.preference.Preference { *; }
 
 #Support cardview
--keep class android.support.v7.widget.RoundRectDrawable { *; }
+-keep class androidx.cardview.widget.RoundRectDrawable { *; }
 
 #
-
