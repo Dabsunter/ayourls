@@ -31,7 +31,7 @@ public abstract class YourlsAction {
     public static final String PARAM_FILTER = "filter";
 
     Map<String, String> params = new HashMap<>();
-    private int status = STATUS_UNKNOWN;
+    protected int status = STATUS_UNKNOWN; // Dabs - let children play with it
     private String message;
     private String code;
 

@@ -45,6 +45,10 @@ public class ShortUrl extends YourlsAction {
             if (details.has("clicks"))
                 clicks = getJsonLong(details,"clicks");
         }
+        /* Dabs - if we reach this point with 'error:url' (error) code, where's the fail ? we just win ! */
+        /* see https://github.com/YOURLS/YOURLS/blob/master/includes/functions.php#L310 */
+        if (data.has("code") && getJsonString(data, "code").equals("error:url"))
+            status = STATUS_SUCCESS;
     }
 
     public String getKeyword() {
