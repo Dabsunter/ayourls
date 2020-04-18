@@ -36,7 +36,8 @@ assembleDebug:
     - ./gradlew assembleDebug
   artifacts:
     paths:
-      - app/build/outputs/
+      - ayourlsapp/build/outputs/
+      - ayourlsware/build/outputs/
 
 debugTests:
   stage: test
