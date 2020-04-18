@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_about">À propos de cette app</string>
+    <string name="action_browser">Ouvrir dans le navigateur</string>
+    <string name="action_copy">Copier</string>
+    <string name="action_delete">Supprimer</string>
+    <string name="action_import">Importer depuis le serveur</string>
+    <string name="action_refresh">Actualiser</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="action_share">Partager</string>
+    <string name="dialog_about_version">Version %1$s</string>
+    <string name="dialog_add_keyword_hint">URL courte (facultatif)</string>
+    <string name="dialog_add_title_hint">Titre (facultatif)</string>
+    <string name="dialog_add_url_hint">URL à raccourcir</string>
+    <string name="dialog_check_server_message">Veuillez patienter…</string>
+    <string name="dialog_check_server_success_message">Votre serveur contient %1$d liens avec %2$d clics.</string>
+    <string name="dialog_check_server_success_title">Connexion réussie.</string>
+    <string name="dialog_check_server_title">Vérifier le serveur</string>
+    <string name="dialog_confirm_delete_also_on_server">Supprimer sur le serveur</string>
+    <string name="dialog_confirm_delete_message">Voulez-vous vraiment supprimer cette URL ?</string>
+    <string name="dialog_confirm_delete_title">Supprimer</string>
+    <string name="dialog_confirm_shortening_message">Voulez-vous vraiment raccourcir cette URL ? %1$s</string>
+    <string name="dialog_confirm_shortening_title">Raccourcir l\'URL</string>
+    <string name="dialog_error_delete_api_missing">La suppression ne fonctionne pas sur votre serveur. Il semble que le
+        plugin api-delete ne soit pas installé.
+    </string>
+    <string name="dialog_error_message">Une erreur s\'est produite : %1$s</string>
+    <string name="dialog_error_no_connection_message">Pas de connexion réseau.</string>
+    <string name="dialog_error_no_valid_url">Pas d\'URL valide !</string>
+    <string name="dialog_error_shortening_message">Une erreur s\'est produite lors du raccourcissement de l\'URL
+        :\n\n%1$s
+    </string>
+    <string name="dialog_error_shortening_title">Erreur de raccourcissement d\'URL</string>
+    <string name="dialog_error_title">Erreur</string>
+    <string name="edit">Éditer</string>
+    <string name="nolinks_help">Il n\'y a pas encore de liens. Après avoir configuré votre serveur dans les paramètres,
+        vous pouvez en ajouter ou en importer.
+    </string>
+    <string name="pref_app_clipboard_monitor_title">Surveiller le presse-papiers</string>
+    <string name="pref_app_delete_server_default_summary">Lors de la confirmation de suppression, l\'option Supprimer
+        sur le serveur sera cochée par défaut.
+    </string>
+    <string name="pref_app_delete_server_default_title">Supprimer sur le serveur par défaut</string>
+    <string name="pref_cat_app_settings">Paramètres de l\'application</string>
+    <string name="pref_cat_server_settings">Paramètres du serveur</string>
+    <string name="pref_server_check_summary">Se connecter à votre installation pour confirmer que vos identifiants
+        fonctionnent.
+    </string>
+    <string name="pref_server_check_title">Vérifier les identifiants</string>
+    <string name="pref_server_token_summary">Ce token se trouve dans l\'onglet \"Outils\" de votre site.</string>
+    <string name="pref_server_url_summary">URL de votre installation Yourls - %s</string>
+    <string name="pref_server_url_summary_empty">URL de votre installation Yourls, ex. http://your-short-url.xy</string>
+    <string name="retry">Réessayer</string>
+    <string name="send">Envoyer</string>
+    <string name="service_clipboard_notification_text">Chercher des URLs dans votre presse-papiers.</string>
+    <string name="service_clipboard_notification_text_long">%1$s Vous pouver désactiver la suveillance du presse-papiers
+        dans les paramètres.
+    </string>
+    <string name="share">Raccourcir l\'URL avec aYourls</string>
+    <string name="snack_link_import_error">Erreur lors de l\'importation de %1$s.</string>
+    <string name="snack_link_import_inserted">%1$s importé.</string>
+    <string name="snack_link_import_updated">%1$s mis à jour.</string>
+    <string name="toast_added_to_clipboard">%1$s copié dans le presse-papiers.</string>
+    <string name="unknown">inconnu</string>
+    <string name="dialog_about_rate">Noter l\'application</string>
+    <string name="dialog_about_website">Site Web</string>
+    <string name="pref_server_url_title">URL Yourls</string>
+    <string name="pref_app_clipboard_replace_title">Remplacer le contenu du presse-papiers</string>
+    <string name="pref_app_clipboard_replace_summary">Toujours remplacer le contenu du presse-papiers par l\'URL
+        raccourcie.
+    </string>
+    <string name="pref_app_clipboard_monitor_summary">Chercher des URLs dans le presse-papiers. Ne fonctionne que sur
+        Android 3 et plus.
+    </string>
+</resources>
