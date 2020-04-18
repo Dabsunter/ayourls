@@ -67,9 +67,9 @@ public class ShortUrlService extends IntentService {
             boolean confirmed = intent.getBooleanExtra(EXTRA_CONFIRMED, false);
             log.debug(url);
             if (!TextUtils.isEmpty(url)) {
-                try {
-                    /* Dabs - let server check the validity of the URL */
-                    //url = UrlValidator.getValidUrl(url, true);
+                /* Dabs - let server check the validity of the URL */
+//                try {
+//                    url = UrlValidator.getValidUrl(url, true);
                     if (confirmed) {
                         log.debug("start url shortening");
 
@@ -194,9 +194,9 @@ public class ShortUrlService extends IntentService {
                         confirmIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(confirmIntent);
                     }
-                } catch (UrlValidator.NoValidUrlExpception noValidUrlExpception) {
-                    log.warn(noValidUrlExpception.getMessage());
-                }
+//                } catch (UrlValidator.NoValidUrlExpception noValidUrlExpception) {
+//                    log.warn(noValidUrlExpception.getMessage());
+//                }
                 return;
             }
         }
