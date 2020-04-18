@@ -53,7 +53,9 @@ public class DialogActivty extends AppCompatActivity implements Dialog.DialogDis
 
             if (Intent.ACTION_SEND.equals(getIntent().getAction())) {
                 try {
-                    url = UrlValidator.getValidUrl(getIntent().getStringExtra(Intent.EXTRA_TEXT), false);
+                    /* Dabs - let server check the validity of the URL */
+                    //url = UrlValidator.getValidUrl(getIntent().getStringExtra(Intent.EXTRA_TEXT), false);
+                    url = getIntent().getStringExtra(Intent.EXTRA_TEXT);
                     dialogType = DIALOG_ADD;
                 } catch (UrlValidator.NoValidUrlExpception noValidUrlExpception) {
                     message = getString(R.string.dialog_error_no_valid_url);

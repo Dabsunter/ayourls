@@ -68,7 +68,8 @@ public class ShortUrlService extends IntentService {
             log.debug(url);
             if (!TextUtils.isEmpty(url)) {
                 try {
-                    url = UrlValidator.getValidUrl(url, true);
+                    /* Dabs - let server check the validity of the URL */
+                    //url = UrlValidator.getValidUrl(url, true);
                     if (confirmed) {
                         log.debug("start url shortening");
 
