@@ -62,6 +62,7 @@ public class DialogActivty extends AppCompatActivity implements Dialog.DialogDis
                 }
                 /**/
                 url = getIntent().getStringExtra(Intent.EXTRA_TEXT);
+                dialogType = DIALOG_ADD;
             }
 
             if (!TextUtils.isEmpty(dialogType)) {

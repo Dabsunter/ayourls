@@ -4,8 +4,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-
-    <com.google.android.material.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
@@ -14,8 +13,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/dialog_add_url_hint"
             android:inputType="textUri"/>
-    </com.google.android.material.widget.TextInputLayout>
-    <com.google.android.material.widget.TextInputLayout
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
@@ -23,9 +22,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/dialog_add_keyword_hint"/>
-    </com.google.android.material.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
@@ -33,6 +32,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/dialog_add_title_hint"/>
-    </com.google.android.material.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>
