@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 import android.text.TextUtils;
 
+import de.mateware.dialog.listener.DialogButtonListener;
+import de.mateware.dialog.listener.DialogCancelListener;
+import de.mateware.dialog.listener.DialogDismissListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,7 +22,7 @@ import de.mateware.dialog.Dialog;
 /**
  * Created by mate on 05.10.2015.
  */
-public class DialogActivty extends AppCompatActivity implements Dialog.DialogDismissListener, Dialog.DialogCancelListener, Dialog.DialogButtonListener {
+public class DialogActivty extends AppCompatActivity implements DialogDismissListener, DialogCancelListener, DialogButtonListener {
 
     private static Logger log = LoggerFactory.getLogger(DialogActivty.class);
 
@@ -71,7 +74,17 @@ public class DialogActivty extends AppCompatActivity implements Dialog.DialogDis
                     if (!TextUtils.isEmpty(url)) {
                         Bundle bundle = new Bundle();
                         bundle.putString(ShortUrlService.EXTRA_URL, url);
-                        new Dialog().withMessage(getString(R.string.dialog_confirm_shortening_message, url))
+                        new Dialog.Builder().setMessage("")
+                                            .setTitle(getString(R.string.dialog_confirm_shortening_message, url))
+                                            .setCancelable(true)
+                                            .setTimer(15)
+                                            .setNegativeButton()
+                                            .setPositiveButton()
+                                            .setNeutralButton(R.string.edit)
+                                            .addBundle(bundle)
+                                            .build()
+                                .show(getSupportFragmentManager(), DIALOG_CLIPBOARD_CONFIRM);
+                        /*new Dialog().withMessage()
                                     .withCancelable(true)
                                     .withTitle(R.string.dialog_confirm_shortening_title)
                                     .withTimer(15)
@@ -79,7 +92,7 @@ public class DialogActivty extends AppCompatActivity implements Dialog.DialogDis
                                     .withPositiveButton()
                                     .withNeutralButton(R.string.edit)
                                     .withBundle(bundle)
-                                    .show(getSupportFragmentManager(), DIALOG_CLIPBOARD_CONFIRM);
+                                    .show(getSupportFragmentManager(), DIALOG_CLIPBOARD_CONFIRM);*/
                     }
                 } else if (DIALOG_DELETE_CONFIRM.equals(dialogType)) {
                     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -88,14 +101,22 @@ public class DialogActivty extends AppCompatActivity implements Dialog.DialogDis
                     Bundle bundle = new Bundle();
                     bundle.putLong(DeleteService.EXTRA_ID, id);
 
-                    new DeleteLinkDialog().setLinkId(id)
+                    /*new DeleteLinkDialog().setLinkId(id)
                                           .setCheckBoxChecked(prefs.getBoolean(getString(R.string.pref_key_app_delete_server_default), false))
                                           .withMessage(message)
                                           .withTitle(R.string.dialog_confirm_delete_title)
                                           .withPositiveButton()
                                           .withNegativeButton()
                                           .withBundle(bundle)
-                                          .show(getSupportFragmentManager(), DIALOG_DELETE_CONFIRM);
+                                          .show(getSupportFragmentManager(), DIALOG_DELETE_CONFIRM);*/
+                    new DeleteLinkDialog.Builder().setLinkId(id)
+                            .setCheckBoxChecked(prefs.getBoolean(getString(R.string.pref_key_app_delete_server_default), false))
+                            .withMessage(message)
+                            .withTitle(R.string.dialog_confirm_delete_title)
+                            .withPositiveButton()
+                            .withNegativeButton()
+                            .withBundle(bundle)
+                            .show(getSupportFragmentManager(), DIALOG_DELETE_CONFIRM);
                 } else if (DIALOG_ERROR.equals(dialogType)) {
                     new Dialog().withTitle(R.string.dialog_error_title)
                                 .withMessage(getString(R.string.dialog_error_message, message))

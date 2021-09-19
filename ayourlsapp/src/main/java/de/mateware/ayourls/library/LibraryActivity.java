@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import de.mateware.dialog.listener.DialogButtonListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,7 +39,7 @@ import de.mateware.ayourls.settings.SettingsActivity;
 import de.mateware.ayourls.utils.TintHelper;
 import de.mateware.dialog.Dialog;
 
-public class LibraryActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>,Dialog.DialogButtonListener {
+public class LibraryActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>, DialogButtonListener {
 
     private static Logger log = LoggerFactory.getLogger(LibraryActivity.class);
 
